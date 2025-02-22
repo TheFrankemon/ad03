@@ -1,1 +1,25 @@
-/* You can add global styles to this file, and also import other style files */
+@import "variables";
+
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0px;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  background-color: #262626;
+
+  font-size: 14px;
+  font-weight: 400;
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  color: #FFF;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
