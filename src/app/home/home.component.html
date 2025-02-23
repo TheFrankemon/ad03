@@ -1,10 +1,10 @@
 <div class="container">
   <div class="search-bar">
-    <input type="text" placeholder="Search...">
+    <input type="text" placeholder="Search..." [(ngModel)]="searchQuery" (input)="filterItems()">
     <div class="search-button">🔍</div>
   </div>
   <div class="items-list">
-    @for (item of items; track $index) {
+    @for (item of filteredItems; track $index) {
       <app-home-item
         [item]="item"
         [isSelected]="selectedItems.includes($index)"
@@ -12,6 +12,8 @@
         (deleteItem)="deleteItem($index)"
         (click)="openItemForm($index)"
       ></app-home-item>
+    } @empty {
+      <div class="empty-list">No items found</div>
     }
   </div>
   <button class="add-button" (click)="openItemForm()">+</button>
