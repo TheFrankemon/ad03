@@ -1,0 +1,68 @@
+@import "../../variables";
+
+:host {
+  display: flex;
+  flex-direction: column;
+  min-width: 700px;
+  gap: $spacing*6;
+  padding: $spacing*8;
+  background: $gray-400-color;
+  border-radius: $radius-sm;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+
+  h3 {
+    margin: 0px;
+  }
+
+  button {
+    color: $light-color;
+    opacity: 0.5;
+    border: none;
+    padding: $spacing*2 0px;
+    border-radius: $radius-sm;
+    cursor: pointer;
+    background: unset;
+    line-height: 0px;
+    font-size: 20px;
+  }
+}
+
+hr {
+  width: 100%;
+  border: 0.5px solid $light-color;
+  opacity: 0.3;
+}
+
+input,
+select {
+  background-color: $gray-300-color;
+  border: 1px solid #313335;
+  padding: $spacing*4;
+  border-radius: $radius-sm;
+  color: $light-color;
+}
+
+select {
+  appearance: none;
+  background-image:
+    linear-gradient(45deg, transparent 50%, gray 50%),
+    linear-gradient(135deg, gray 50%, transparent 50%);
+  background-position: calc(100% - 24px) calc(24px), calc(100% - 19px) calc(24px);
+  background-size:
+    5px 5px,
+    5px 5px;
+  background-repeat: no-repeat;
+}
+
+button.modal-save {
+  border: none;
+  background-color: $success-color;
+  padding: $spacing*2 $spacing*8;
+  border-radius: $radius-lg;
+  color: $light-color;
+  align-self: flex-end;
+}

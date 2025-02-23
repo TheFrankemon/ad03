@@ -1,6 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { Item, ItemStatus } from '../../models/item.model';
 import { DatePipe } from '@angular/common';
+import { Dialog } from '@angular/cdk/dialog';
+import { NewItemFormComponent } from '../new-item-form/new-item-form.component';
 
 @Component({
   selector: 'app-home',
@@ -10,6 +12,7 @@ import { DatePipe } from '@angular/common';
   styleUrl: './home.component.scss'
 })
 export class HomeComponent {
+  dialog = inject(Dialog);
   items: Item[] = [
     {
       title: 'Spring Boot 🍃',
@@ -39,5 +42,21 @@ export class HomeComponent {
     } else {
       this.selectedItems = this.selectedItems.filter(it => idx !== it);
     }
+  }
+
+  newItemForm() {
+    const dialogRef = this.dialog.open<Item | null>(NewItemFormComponent, {
+      disableClose: true,
+      // minWidth: '300px',
+      // data,
+    });
+
+    dialogRef.closed.subscribe(result => {
+      if (!!result) {
+        console.log('SUCCESS');
+      } else {
+        console.log('with X');
+      }
+    });
   }
 }

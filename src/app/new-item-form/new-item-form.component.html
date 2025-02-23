@@ -1,0 +1,14 @@
+<div class="modal-header">
+  <h3>New Item</h3>
+  <button (click)="closeDialog()">ｘ</button>
+</div>
+<hr/>
+<input type="text" placeholder="Write the item name">
+<input type="text" placeholder="Write the item description">
+<select id="">
+  <option value="">Select a state</option>
+  @for (item of options; track $index) {
+    <option [value]="item">{{item}}</option>
+  }
+</select>
+<button class="modal-save">Save</button>
