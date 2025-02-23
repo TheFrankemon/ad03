@@ -86,6 +86,7 @@
   flex-direction: column;
   flex-grow: 1;
   gap: $spacing;
+  min-width: 380px;
 
   h3 {
     margin: 0px;

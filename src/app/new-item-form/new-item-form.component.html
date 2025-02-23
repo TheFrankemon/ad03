@@ -3,12 +3,12 @@
   <button (click)="closeDialog()">ｘ</button>
 </div>
 <hr/>
-<input type="text" placeholder="Write the item name">
-<input type="text" placeholder="Write the item description">
-<select id="">
-  <option value="">Select a state</option>
+<input type="text" placeholder="Write the item title" [(ngModel)]="itemTitle">
+<input type="text" placeholder="Write the item description" [(ngModel)]="itemDescription">
+<select [(ngModel)]="selectedStatus">
+  <option value="">Select a status</option>
   @for (item of options; track $index) {
     <option [value]="item">{{item}}</option>
   }
 </select>
-<button class="modal-save">Save</button>
+<button class="modal-save" (click)="saveItem()">Save</button>

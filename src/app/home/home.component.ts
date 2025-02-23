@@ -53,7 +53,8 @@ export class HomeComponent {
 
     dialogRef.closed.subscribe(result => {
       if (!!result) {
-        console.log('SUCCESS');
+        console.log(result);
+        this.items.push(result);
       } else {
         console.log('with X');
       }
