@@ -1,0 +1,28 @@
+<div class="item-main">
+  <div
+    class="item-check"
+    [class.selected]="isSelected()"
+    (click)="selectItem.emit()"
+  >
+    @if (isSelected()) {
+      ✔
+    }
+  </div>
+  <div class="item-content">
+    <h3>{{ item().title }}</h3>
+    <span>{{ item().description }}</span>
+    @if (!item().update_date) {
+      <span>
+        <span class="item-date-label">Created:</span>
+        {{ item().creation_date | date: 'YYYY*MM*dd HH|mm|ss' }}
+      </span>
+    } @else {
+      <span>
+        <span class="item-date-label">Updated: </span>
+        {{ item().update_date | date: 'YYYY*MM*dd HH|mm|ss' }}
+      </span>
+    }
+  </div>
+</div>
+<span class="category {{item().status.toLowerCase()}}">{{ item().status }}</span>
+<button class="delete-button">Ⓧ</button>

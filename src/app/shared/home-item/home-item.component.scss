@@ -1,0 +1,89 @@
+@import "../../../variables";
+
+:host {
+  display: flex;
+  align-items: center;
+  background-color: $gray-300-color;
+  border-left: 3px solid $success-color;
+  padding: $spacing*6 $spacing*4;
+  padding-right: $spacing*8;
+  border-radius: $radius-sm;
+  justify-content: space-between;
+}
+
+.item-main {
+  display: flex;
+  align-items: center;
+  gap: $spacing*2;
+}
+
+.item-check {
+  width: 30px;
+  height: 30px;
+  flex-shrink: 0;
+  background-color: $gray-600-color;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+
+  &.selected {
+    background-color: $success-color;
+  }
+}
+
+.item-content {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  gap: $spacing;
+  min-width: 380px;
+
+  h3 {
+    margin: 0px;
+  }
+
+  span {
+    margin: 0;
+  }
+
+  .item-date-label {
+    opacity: 0.3;
+  }
+}
+
+.category {
+  background-color: $gray-600-color;
+  padding: $spacing $spacing*3;
+  border-radius: $radius-sm;
+  font-size: 12px;
+
+  &.frontend {
+    background-color: #dc5555;
+  }
+  &.backend {
+    background-color: #657d0d;
+  }
+  &.fullstack {
+    background-color: #348b2e;
+  }
+  &.devops {
+    background-color: #537ea5;
+  }
+  &.qa {
+    background-color: #743e93;
+  }
+  &.architect {
+    background-color: #e39c39;
+  }
+}
+
+.delete-button {
+  color: $gray-800-color;
+  border: none;
+  padding: $spacing*2;
+  border-radius: $radius-sm;
+  cursor: pointer;
+  background: unset;
+}

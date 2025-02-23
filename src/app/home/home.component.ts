@@ -1,14 +1,14 @@
 import { Component, inject } from '@angular/core';
 import { Item } from '../../models/item.model';
-import { DatePipe } from '@angular/common';
 import { Dialog } from '@angular/cdk/dialog';
 import { NewItemFormComponent } from '../new-item-form/new-item-form.component';
 import { mockData } from '../../models/mockdata';
+import { HomeItemComponent } from "../shared/home-item/home-item.component";
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [DatePipe],
+  imports: [HomeItemComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
