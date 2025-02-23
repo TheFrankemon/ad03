@@ -64,7 +64,8 @@ export class HomeComponent implements OnInit {
     dialogRef.closed.subscribe(result => {
       if (!!result) {
         if (isEdit) {
-          this.items[idx] = result;
+          const updatedItem: Item = { ...result, update_date: new Date() };
+          this.items[idx] = updatedItem;
         } else {
           this.items.push(result);
         }
