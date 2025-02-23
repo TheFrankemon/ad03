@@ -15,12 +15,16 @@ export class NewItemFormComponent {
   data = inject<Item|null>(DIALOG_DATA);
   dialogRef = inject(DialogRef<Item|null>);
 
+  modalTitle = 'New Item';
+
   itemTitle = '';
   itemDescription = '';
   selectedStatus = '';
 
   ngOnInit() {
     if (this.data) {
+      this.modalTitle = 'Edit Item';
+
       this.itemTitle = this.data.title;
       this.itemDescription = this.data.description;
       this.selectedStatus = this.data.status;
