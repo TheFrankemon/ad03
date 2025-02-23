@@ -25,11 +25,12 @@ export class HomeComponent {
     }
   }
 
-  newItemForm() {
+  openItemForm(idx?: number) {
+    const data = idx !== undefined ? this.items[idx] : null;
     const dialogRef = this.dialog.open<Item | null>(NewItemFormComponent, {
       disableClose: true,
       // minWidth: '300px',
-      // data,
+      data
     });
 
     dialogRef.closed.subscribe(result => {

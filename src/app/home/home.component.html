@@ -9,8 +9,9 @@
         [item]="item"
         [isSelected]="selectedItems.includes($index)"
         (selectItem)="selectItem($index)"
+        (click)="openItemForm($index)"
       ></app-home-item>
     }
   </div>
-  <button class="add-button" (click)="newItemForm()">+</button>
+  <button class="add-button" (click)="openItemForm()">+</button>
 </div>
