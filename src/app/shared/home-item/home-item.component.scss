@@ -9,6 +9,12 @@
   border-radius: $radius-sm;
   justify-content: space-between;
   position: relative;
+  border: 1px solid transparent;
+  transition: 0.25s ease-in-out border;
+
+  &:hover {
+    border: 1px solid $gray-600-color;
+  }
 }
 
 .item-main {
@@ -30,6 +36,11 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  transition: 0.25s ease-in-out background-color;
+
+  &:hover {
+    background-color: $gray-800-color
+  }
 
   &.selected {
     background-color: $success-color;
@@ -92,4 +103,9 @@
   border-radius: $radius-sm;
   cursor: pointer;
   background: unset;
+  transition: 0.25s ease-in-out color;
+
+  &:hover {
+    color: $light-color;
+  }
 }

@@ -27,6 +27,11 @@
     background: unset;
     line-height: 0px;
     font-size: 20px;
+    transition: 0.25s ease-in-out color;
+
+    &:hover {
+      color: $light-color;
+    }
   }
 }
 
@@ -42,6 +47,11 @@ select {
   padding: $spacing*4;
   border-radius: $radius-sm;
   color: $light-color;
+  transition: 0.25s ease-in-out border;
+
+  &:hover {
+    border: 1px solid $gray-600-color;
+  }
 }
 
 select {
@@ -63,4 +73,11 @@ button.modal-save {
   border-radius: $radius-lg;
   color: $light-color;
   align-self: flex-end;
+  cursor: pointer;
+  opacity: 1;
+  transition: 0.25s ease-in-out opacity;
+
+  &:hover {
+    opacity: 0.7;
+  }
 }

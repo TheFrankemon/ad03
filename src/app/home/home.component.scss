@@ -21,6 +21,12 @@
   border-radius: $radius-sm;
   position: relative;
   align-self: stretch;
+  border: 1px solid transparent;
+  transition: 0.25s ease-in-out border;
+
+  &:hover {
+    border: 1px solid $gray-600-color;
+  }
 
   input {
     flex-grow: 1;
@@ -68,6 +74,12 @@
   border-radius: 50%;
   font-size: 20px;
   cursor: pointer;
+  opacity: 1;
+  transition: 0.25s ease-in-out opacity;
+
+  &:hover {
+    opacity: 0.7;
+  }
 }
 
 .share-button {
