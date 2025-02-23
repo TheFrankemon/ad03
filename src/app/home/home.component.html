@@ -7,7 +7,7 @@
     @for (item of filteredItems; track $index) {
       <app-home-item
         [item]="item"
-        [isSelected]="selectedItems.includes($index)"
+        [isSelected]="selectedItems.value.includes($index)"
         (selectItem)="selectItem($index)"
         (deleteItem)="deleteItem($index)"
         (click)="openItemForm($index)"
@@ -16,5 +16,11 @@
       <div class="empty-list">No items found</div>
     }
   </div>
+  @if (showShareButton) {
+    <button class="share-button" (click)="shareItems()">
+      <span>{{selectedItems.value.length}}</span>
+      ➡
+    </button>
+  }
   <button class="add-button" (click)="openItemForm()">+</button>
 </div>

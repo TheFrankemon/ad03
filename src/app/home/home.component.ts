@@ -5,6 +5,7 @@ import { NewItemFormComponent } from '../new-item-form/new-item-form.component';
 import { mockData } from '../../models/mockdata';
 import { HomeItemComponent } from "../shared/home-item/home-item.component";
 import { FormsModule } from '@angular/forms';
+import { BehaviorSubject } from 'rxjs';
 
 @Component({
   selector: 'app-home',
@@ -18,7 +19,9 @@ export class HomeComponent implements OnInit {
   items: Item[] = mockData;
   filteredItems: Item[] = [];
   searchQuery = '';
-  selectedItems: number[] = [];
+  selectedItems = new BehaviorSubject<number[]>([]);
+  selectedItems$ = this.selectedItems.asObservable();
+  showShareButton = false;
 
   ngOnInit() {
     const lsItems = localStorage.getItem('items');
@@ -27,6 +30,10 @@ export class HomeComponent implements OnInit {
     }
 
     this.filteredItems = this.items;
+
+    this.selectedItems$.subscribe(values => {
+      this.showShareButton = values.length > 0;
+    });
   }
 
   filterItems() {
@@ -41,10 +48,11 @@ export class HomeComponent implements OnInit {
   }
 
   selectItem(idx: number) {
-    if (!this.selectedItems.includes(idx)) {
-      this.selectedItems.push(idx);
+    const currentItems = this.selectedItems.value;
+    if (!currentItems.includes(idx)) {
+      this.selectedItems.next([...currentItems, idx]);
     } else {
-      this.selectedItems = this.selectedItems.filter(it => idx !== it);
+      this.selectedItems.next(currentItems.filter(it => idx !== it));
     }
   }
 
@@ -70,9 +78,15 @@ export class HomeComponent implements OnInit {
           this.items.push(result);
         }
         localStorage.setItem('items', JSON.stringify(this.items));
-      } else {
-        console.log('form closed');
       }
     });
+  }
+
+  shareItems() {
+    const sharedItems = this.selectedItems.value.map(idx => this.items[idx]);
+    console.log("%cSelected Items to share\n", "background-color: black; color: #0ABD36; font-size: 16px");
+    console.log("%c"+JSON.stringify(sharedItems, undefined, 4), "background-color: black; color:rgb(228, 149, 0); font-size: 12px; padding: 8px");
+
+    this.selectedItems.next([]);
   }
 }
