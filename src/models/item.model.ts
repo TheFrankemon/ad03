@@ -1,10 +1,10 @@
 export enum ItemStatus {
-  FrontEnd,
-  BackEnd,
-  FullStack,
-  DevOps,
-  QA,
-  Architect
+  FrontEnd = 'FrontEnd',
+  BackEnd = 'BackEnd',
+  FullStack = 'FullStack',
+  DevOps = 'DevOps',
+  QA = 'QA',
+  Architect = 'Architect'
 }
 
 export interface Item {

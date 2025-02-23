@@ -1,0 +1,113 @@
+@import "../../variables";
+
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: $spacing*7;
+  background-color: #2b2d2f;
+  min-height: 75vh;
+}
+
+.items-list {
+  display: flex;
+  flex-direction: column;
+  min-width: 700px;
+  gap: $spacing*4;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  background-color: #242629;
+  border-left: 3px solid $success-color;
+  padding: $spacing*6 $spacing*4;
+  padding-right: $spacing*8;
+  border-radius: $radius-sm;
+  justify-content: space-between;
+}
+
+.item-main {
+  display: flex;
+  align-items: center;
+  gap: $spacing*2;
+}
+
+.item-check {
+  width: 30px;
+  height: 30px;
+  flex-shrink: 0;
+  background-color: #5a6270;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+
+  &.selected {
+    background-color: $success-color;
+  }
+}
+
+.item-content {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  gap: $spacing;
+
+  h3 {
+    margin: 0px;
+  }
+
+  span {
+    margin: 0;
+  }
+
+  .item-date-label {
+    opacity: 0.3;
+  }
+}
+
+.category {
+  background-color: #5a6270;
+  padding: $spacing $spacing*3;
+  border-radius: $radius-sm;
+  font-size: 12px;
+
+  &.frontend {
+    background-color: #dc5555;
+  }
+  &.backend {
+    background-color: #657d0d;
+  }
+  &.fullstack {
+    background-color: #348b2e;
+  }
+  &.devops {
+    background-color: #537ea5;
+  }
+  &.qa {
+    background-color: #743e93;
+  }
+  &.architect {
+    background-color: #e39c39;
+  }
+}
+
+.delete-button {
+  color: white;
+  opacity: 0.5;
+  border: none;
+  padding: $spacing*2;
+  border-radius: $radius-sm;
+  cursor: pointer;
+  background: unset;
+}
