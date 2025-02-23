@@ -12,9 +12,30 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: $spacing*7;
-  background-color: #2b2d2f;
   min-height: 75vh;
+}
+
+.search-bar {
+  display: flex;
+  margin-bottom: $spacing*5;
+  background-color: #2b2d2f;
+  border-radius: $radius-sm;
+  position: relative;
+  align-self: stretch;
+
+  input {
+    flex-grow: 1;
+    padding: $spacing*4 $spacing*7;
+    color: white;
+    border: none;
+    background: none;
+  }
+
+  .search-button {
+    position: absolute;
+    right: $spacing*4;
+    align-self: center;
+  }
 }
 
 .items-list {
@@ -22,6 +43,8 @@
   flex-direction: column;
   min-width: 700px;
   gap: $spacing*4;
+  padding: $spacing*7;
+  background-color: #2b2d2f;
 }
 
 .item {
