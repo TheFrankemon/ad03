@@ -25,4 +25,4 @@
   </div>
 </div>
 <span class="category {{item().status.toLowerCase()}}">{{ item().status }}</span>
-<button class="delete-button">Ⓧ</button>
+<button class="delete-button" (click)="deleteItem.emit()">Ⓧ</button>

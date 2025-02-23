@@ -9,6 +9,7 @@
         [item]="item"
         [isSelected]="selectedItems.includes($index)"
         (selectItem)="selectItem($index)"
+        (deleteItem)="deleteItem($index)"
         (click)="openItemForm($index)"
       ></app-home-item>
     }

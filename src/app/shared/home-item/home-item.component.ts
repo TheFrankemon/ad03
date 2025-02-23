@@ -13,4 +13,5 @@ export class HomeItemComponent {
   item = input.required<Item>();
   isSelected = input<boolean>();
   selectItem = output<void>();
+  deleteItem = output<void>();
 }
