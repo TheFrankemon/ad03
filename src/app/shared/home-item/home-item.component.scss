@@ -15,6 +15,7 @@
   display: flex;
   align-items: center;
   gap: $spacing*2;
+  cursor: default;
 }
 
 .item-check {
@@ -60,6 +61,7 @@
   padding: $spacing $spacing*3;
   border-radius: $radius-sm;
   font-size: 12px;
+  cursor: default;
 
   &.frontend {
     background-color: #dc5555;
