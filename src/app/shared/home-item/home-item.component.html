@@ -1,8 +1,9 @@
 <div class="item-main">
   <div
+    #checkbox
     class="item-check"
     [class.selected]="isSelected()"
-    (click)="selectItem.emit()"
+    (click)="onCheckboxClick($event)"
   >
     @if (isSelected()) {
       ✔
@@ -25,4 +26,4 @@
   </div>
 </div>
 <span class="category {{item().status.toLowerCase()}}">{{ item().status }}</span>
-<button class="delete-button" (click)="deleteItem.emit()">Ⓧ</button>
+<button #closeBtn class="delete-button" (click)="onCloseClick($event)">Ⓧ</button>
