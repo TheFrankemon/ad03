@@ -1,3 +1,5 @@
+@use '@angular/cdk' as cdk;
+@include cdk.overlay();
 @import "variables";
 
 html:focus-within {
